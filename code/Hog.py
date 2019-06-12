@@ -1,33 +1,30 @@
+import cv2 as cv
 class Hog(object):
-    def __init__(self):
-        self.winSize = (20,20)
-        self.blockSize = (10,10)
-        self.blockStride = (5,5)
-        self.cellSize = (10,10)
-        self.nbins = 9
-        self.derivAperture = 1
-        self.winSigma = -1.
-        self.histogramNormType = 0
-        self.L2HysThreshold = 0.2
-        self.gammaCorrection = 1
-        self.nlevels = 64
-        self.signedGradients = True
-        self.useSignedGradients = 1
-
+    @staticmethod
     def getDescriptor():
-        hog = cv.HOGDescriptor(
-            self.winSize,
-            self.blockSize,
-            self.blockStride,
-            self.cellSize,
-            self.nbins,
-            self.derivAperture,
-            self.winSigma,
-            self.histogramNormType,
-            self.L2HysThreshold,
-            self.gammaCorrection,
-            self.nlevels,
-            self.useSignedGradients
-        )
+        winSize = (20,20)
+        blockSize = (10,10)
+        blockStride = (5,5)
+        cellSize = (10,10)
+        nbins = 9
+        derivAperture = 1
+        winSigma = -1.
+        histogramNormType = 0
+        L2HysThreshold = 0.2
+        gammaCorrection = 1
+        nlevels = 64
+        signedGradients = True
 
-        return hog
+        return cv.HOGDescriptor(
+            winSize,
+            blockSize,
+            blockStride,
+            cellSize,
+            nbins,
+            derivAperture,
+            winSigma,
+            histogramNormType,
+            L2HysThreshold,
+            gammaCorrection,
+            nlevels
+        )
