@@ -9,7 +9,5 @@ class FacialRecognizer(object):
 
         x = numpy.array([0, 1, 0, 1], [0, 0, 1, 1])
         yd = numpy.array([1, 0, 0, 1])
-        h = 
+        h = 1
         neural_network(x, yd, h)
-
-    def neural_network(x, yd, h):
