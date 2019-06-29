@@ -28,6 +28,9 @@ class DetectFace(object):
                 hogHistorygramArray.append(hogComputed)
                 lbpHistogramArray.append(lbpComputed)
 
+        print(hogHistorygramArray)
+        print(lbpHistogramArray)
+
     @staticmethod
     def detectFace(pathOfFile):
         face_cascade = cv2.CascadeClassifier('C:\\Users\Lucas\AppData\Local\Programs\Python\Python37-32\Lib\site-packages\cv2\data\haarcascade_frontalface_default.xml')
@@ -40,6 +43,7 @@ class DetectFace(object):
 
         for (x, y, w, h) in faces:
             img = cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
+            #img = img[y:y+h, x:x+w]
 
         cv2.imshow('img', img)
         cv2.waitKey(0)
